@@ -1,0 +1,4 @@
+server/public/vendor
+public/assets/scripts
+.idea
+node_modules

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Walking Skeleton</title>
+    <link rel="stylesheet" href="views/stylesheet.css" />
+    <script src="/vendor/angular/angular.min.js"></script>
+    <script src="/assets/scripts/app.min.js"></script>
+
+</head>
+<body>
+    <div class="container" ng-Controller="IndexController">
+        <h1>Look at all your cats!</h1>
+        <p>You have {{numberCats}} cats on record.</p>
+
+        <h2 ng-show="cat.name">Your new cat's name is: {{cat.name}}</h2>
+        <h2 ng-hide="cat.name">Have another furry, little guy? Please enter their name below.</h2>
+
+        <form novlidate>
+            Name: <input class="submit" type="text" ng-model="cat.name" /><br/>
+            <input class="submit" type="submit" ng-click="addCat(cat)" value="Save" />
+        </form>
+        <div class="cats">
+            <h4>Cats</h4>
+            <ul>
+                <li ng-click="removeCat(cat.name)" ng-repeat="cat in cats">{{cat.name}}</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
